@@ -1,0 +1,51 @@
+<h2 class="text-center font-weight-bold text-primary mb-4">My Notes</h2>
+
+<!-- View Mode Toggle -->
+<div class="d-flex justify-content-center mb-4">
+  <mat-button-toggle-group [(ngModel)]="viewMode" aria-label="View Mode" class="view-toggle-group">
+    <mat-button-toggle value="list" class="mat-button-toggle">
+      List View
+    </mat-button-toggle>
+    <mat-button-toggle value="card" class="mat-button-toggle">
+      Card View
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+</div>
+
+<!-- If data is loading -->
+<div *ngIf="!notes || notes.length === 0" class="text-center text-muted">
+  No notes are available...
+</div>
+
+<!-- List View -->
+<div *ngIf="viewMode === 'list' && notes.length > 0" class="list-view">
+  <mat-list>
+    <mat-list-item *ngFor="let note of notes" class="mat-elevation-z2 mb-3 p-4 note-list-item">
+      <div class="d-flex flex-column">
+        <span class="font-weight-bold text-primary mb-2 note-title">{{ note.title }}</span>
+        <span class="text-muted note-content">{{ note.content }}</span>
+        <br/>
+        <span class="text-secondary note-description mt-1">{{ note.description }}</span> <!-- Added line -->
+      </div>
+    </mat-list-item>
+  </mat-list>
+</div>
+
+
+<!-- Card View -->
+<div *ngIf="viewMode === 'card' && notes.length > 0" class="card-view">
+  <div *ngFor="let note of notes" class="note-card-container">
+    <mat-card class="note-card mat-elevation-z4">
+      <mat-card-header>
+        <mat-card-title class="note-card-title">{{ note.title }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="note-card-content">{{ note.content }}</mat-card-content>
+        <span class="text-secondary note-description mt-1">{{ note.description }}</span>
+      <div class="note-card-footer">
+        <!-- Optional Footer Actions -->
+      </div>
+    </mat-card>
+  </div>
+</div>
+
+

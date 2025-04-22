@@ -1,0 +1,185 @@
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  
+  .note-card {
+    width: 250px;
+    min-height: 150px;
+  }
+  
+  
+  .view-toggle-group .mat-button-toggle {
+    margin: 0 15px;
+    font-size: 1.1rem;
+    padding: 12px 25px;
+    background: linear-gradient(45deg, #e1f5fe, #81d4fa);
+    color: #1e88e5;
+    transition: all 0.3s ease-in-out;
+    border-radius: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .view-toggle-group .mat-button-toggle:hover {
+    background: linear-gradient(45deg, #1e88e5, #63a4ff);
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .view-toggle-group .mat-button-toggle.mat-button-toggle-checked {
+    background-color: #1e88e5;
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Add a subtle bounce effect when toggling */
+  .view-toggle-group .mat-button-toggle {
+    animation: buttonBounce 0.5s ease-in-out;
+  }
+
+  h2 {
+    color: #e51e99; /* Primary color (blue) for the heading */
+    margin-top: 30px; /* Adds margin at the top */
+    margin-bottom: 20px; /* Adds margin at the bottom */
+    text-align: center;
+  }
+  
+  /* List View */
+  .list-view .mat-list-item {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.3s ease-in-out;
+  }
+
+  .list-view .mat-list-item:hover {
+    background-color: #e3f2fd;
+    transform: translateY(-5px);
+  }
+
+  .note-title {
+    font-size: 1.2rem;
+    color: #ca1886;
+    text-transform: capitalize;
+    font-weight: bold;
+  }
+
+  .note-content {
+    font-size: 1rem;
+    color: #555;
+  }
+
+  .cta-button {
+    background-color: #1e88e5;
+    color: white;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+
+  .cta-button:hover {
+    background-color: #1565c0;
+  }
+
+  /* Card View */
+  .card-view {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+
+  .note-card-container {
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    max-width: 300px;
+    margin: 10px;
+    opacity: 0;
+    animation: fadeIn 0.6s forwards;
+  }
+
+  .note-card {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 16px;
+  }
+
+  .note-card-header {
+    background-color: #f5f5f5;
+    padding: 16px;
+  }
+
+  .note-card-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #ca1886;
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: 8px;
+  }
+
+  .note-card-content {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+
+  .note-card-footer {
+    text-align: center;
+  }
+
+  .note-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+  }
+
+  /* Button with Icon */
+  .cta-button mat-icon {
+    margin-right: 8px;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .note-card {
+      width: 100%;
+      max-width: 280px;
+    }
+
+    .view-toggle-group .mat-button-toggle {
+      font-size: 0.95rem;
+      padding: 8px 16px;
+    }
+
+    .cta-button {
+      font-size: 0.9rem;
+      padding: 6px 12px;
+    }
+  }
+
+  /* Animations */
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  @keyframes buttonBounce {
+    0% {
+      transform: scale(0.95);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+}
